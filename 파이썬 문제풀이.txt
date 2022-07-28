@@ -1,0 +1,161 @@
+# -*- coding: utf-8 -*-
+#미니 실습1
+def max4(a,b,c,d):
+    return max(a,b,c,d)
+
+#미니 실습2
+def waterpay(comp,use):
+    charge = 0
+    if comp == 'A':
+        charge = use * 100
+    else:
+        if B <= 50:
+            charge = use * 150
+        else:
+            charge = 50 * 150 +  (use - 50) * 75
+        
+    return charge
+
+#미니 실습3
+def mini3():
+    a = int(input('정수 a를 입력하세요'))
+    b = int(input('정수 b를 입력하세요'))
+
+    if a > b:
+        a, b = b, A
+
+    sum = 0
+
+    for i in range(a, b):
+        print(f'{i}+',end='')
+        sum += i
+    sum += b
+    print(f'{b}=',end='')
+    print(sum)
+
+#미니 실습4
+def mini4():
+    area = int(input('직사각형 넓이를 입력하세요'))
+    for i in range(1, area+1):
+        if area % i: continue
+        print(f'{i} X {area//i}')
+
+#실습1
+def electricPay(el):
+	pay = 0
+	if el < 100:
+		pay = el * 60.7
+	elif el > 100 and el <= 200:
+		pay = 100 * 60.7 + (el - 100) * 125.9
+	else:
+		pay = 100 * 60.7 + 100 * 125.9 + (el - 200) * 187.9
+	pay = (pay + 1600) * 1.137
+	return int(pay)
+
+#실습2
+def prac2():
+	n = int(input('몇 개를 출력할까요?'))
+	for i in range(n):
+		if i % 2 == 0:
+			print(f'+',end='')
+		else:
+			print(f'-',end='')
+
+#실습3
+def prac3():
+	for i in range(1,13):
+		if i == 8:
+			continue
+		print(f'{i}',end=' ')
+
+#실습4
+def prac4():
+	n = int(input('정수를 입력 하세요'))
+	root = n ** 0.5
+	print(int(root))
+	for i in range(1,int(root)+1):
+		for j in range(2,7):
+			if i**j == n:
+				return print(f'root:{i},pwd:{j}',end='')
+	return print('결과 없음')
+
+
+
+#실습Q0
+def solution0(a, b):
+    answer = -1
+    for i in range(1,a+1):
+        if a % i == 0 and b % i == 0:
+            answer = i
+            break
+        
+    return answer
+
+
+
+#실습Q1
+def solution1(a, b):
+    answer = a * b
+    
+    t = max(a,b)
+        
+    for i in range(t, a*b+1,t):
+        if t % a == 0 and t % b == 0:
+            answer = t*i
+            break
+        
+    return answer
+
+
+#실습Q2
+def solution2():
+    N = input()
+    origin = N
+    count = 0
+    if int(N) < 10:
+        N = '0' + str(N)
+    else:
+        N = str(N)
+        
+    while True:
+        sum_num = int(N[0]) + int(N[1])
+        new = N[1] + str(sum_num)[-1]
+        N = new
+        count += 1
+        if int(N == origin):
+            break
+    
+    return print(count)
+
+#실습Q3
+def solution3(left, right):
+    answer = 0
+    
+    for i in range(left, right+1):
+        ctn = 0
+        for j in range(1, i+1):
+            if i % j == 0:
+                ctn+=1
+        if ctn % 2 == 0:
+            answer+=i
+        else:
+            answer-=i
+
+#실습Q4
+def solution4():
+    data = input('숫자로 이루어진 문자열을 입력하세요. ')
+    result = 0
+    for i in data:
+        if i == '0':
+            continue
+        elif i == '1':
+            result+= int(i)
+        else:
+            if data[0] == '0':
+                result+= int(i)
+                continue
+                
+            result*=int(i)
+                
+            
+    return result
